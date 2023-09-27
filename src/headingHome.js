@@ -1,3 +1,5 @@
+import './style.css';
+
 let heading;
 let buttonHome, buttonMenu , SpecialFeatures;
 let division , subDiv;
@@ -18,8 +20,17 @@ function createElements()
     SpecialFeatures.textContent = "Special features";
 }
 
+ function addclasses()
+ {
+    division.classList.add('header');
+    buttonHome.classList.add('Home');
+    buttonMenu.classList.add('Menu');
+    SpecialFeatures.classList.add('SF');
+ }
+
 function addElements()
 {
+    
     createElements();
     subDiv.appendChild(buttonHome);
     subDiv.appendChild(buttonMenu);
@@ -27,6 +38,8 @@ function addElements()
 
     division.appendChild(heading);
     division.appendChild(subDiv);
+    
+    addclasses();
 }
 
-export {division , addElements};
+export {division ,buttonHome,buttonMenu, SpecialFeatures , addElements};

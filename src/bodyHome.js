@@ -1,3 +1,4 @@
+
 const container = document.createElement('div');
 const innerDiv = document.createElement('div');
 const leftButton = document.createElement('button');
@@ -11,12 +12,18 @@ function createElem()
 
 }
 
+function addClass()
+{
+    container.classList.add('floatingBlock');
+    innerDiv.classList.add('inner');
+}
 function addBody()
 {
     createElem();
     container.appendChild(leftButton);
     container.appendChild(innerDiv);
     container.appendChild(rightButton);
+    addClass();
 }
 
-export {container , addBody};
+export {container, innerDiv , leftButton , rightButton, addBody};
