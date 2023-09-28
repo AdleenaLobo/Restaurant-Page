@@ -10,7 +10,7 @@ module.exports = {
     {
         filename: 'main.js',
         path: path.resolve(__dirname , 'dist'),
-        publicPath: '/',
+        publicPath: './',
     },
 
     module:
@@ -25,7 +25,6 @@ module.exports = {
                 test:/\.(png|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             }
-            
         ]
     }
 }

@@ -1,8 +1,15 @@
 import './style.css';
+import homeImg from '../assets/home.png';
+import menuImg from '../assets/menu.png';
+import featuresImg from '../assets/features.png';
 
 let heading;
 let buttonHome, buttonMenu , SpecialFeatures;
 let division , subDiv;
+let homeimage;
+let menuimage;
+const featuresimage= new Image();
+
 function createElements()
 {
     division = document.createElement('div');
@@ -11,13 +18,25 @@ function createElements()
 
     subDiv = document.createElement('div');
     buttonHome = document.createElement('button');
-    buttonHome.textContent = "Home";
+    buttonHome.setAttribute('width', '50px');
+    homeimage = document.createElement('img');
+    homeimage.src=homeImg;
+    homeimage.setAttribute('height' , '20px');
+    homeimage.setAttribute('width' , '20px');
 
     buttonMenu = document.createElement('button');
-    buttonMenu.textContent = "Menu";
+    buttonMenu.setAttribute('width', '50px');
+    menuimage=document.createElement('img');
+    menuimage.src=menuImg;
+    menuimage.setAttribute('height' , '20px');
+    menuimage.setAttribute('width' , '20px');
 
     SpecialFeatures = document.createElement('button');
-    SpecialFeatures.textContent = "Special features";
+    SpecialFeatures.setAttribute('width', '50px');
+    featuresimage.src=featuresImg;
+    featuresimage.setAttribute('height', '20px');
+    featuresimage.setAttribute('width', '20px');
+
 }
 
  function addclasses()
@@ -26,12 +45,17 @@ function createElements()
     buttonHome.classList.add('Home');
     buttonMenu.classList.add('Menu');
     SpecialFeatures.classList.add('SF');
+    subDiv.classList.add('buttoncontainer');
  }
 
 function addElements()
 {
     
     createElements();
+    buttonHome.appendChild(homeimage);
+    buttonMenu.appendChild(menuimage);
+    SpecialFeatures.appendChild(featuresimage);
+
     subDiv.appendChild(buttonHome);
     subDiv.appendChild(buttonMenu);
     subDiv.appendChild(SpecialFeatures);

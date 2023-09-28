@@ -1,6 +1,4 @@
 import { innerDiv, leftButton, rightButton } from "./bodyHome";
-import { leftbun } from "./leftbutton";
-
 
 let arrhomecontent=['random' , 'random2' , 'random3'];
 let arrmenucontent = ['something' , 'something2' , 'something3'];
@@ -38,7 +36,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.value == arrmenucontent[i])
+                if(innerDiv.textContent == arrmenucontent[i])
                 {
                     index=i;
                 }   
@@ -59,7 +57,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.value == arrspcontent[i])
+                if(innerDiv.textContent == arrspcontent[i])
                 {
                     index=i;
                 }   
