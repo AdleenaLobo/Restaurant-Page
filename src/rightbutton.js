@@ -1,6 +1,7 @@
 import { homepage0, homepage1, homepage2 } from "./Homepage";
-import { arrhomecontentHeading, innerDiv, leftButton, rightButton,arrmenucontent , arrspcontent , innerHeading , innerinnerDiv } from "./bodyHome";
-
+import { menu1, menu2 } from "./Menupage";
+import {arrmenucontentHeading, arrhomecontentHeading, arrspcontentHeading, innerDiv, leftButton, rightButton,arrmenucontent , arrspcontent , innerHeading , innerinnerDiv } from "./bodyHome";
+import {sf0 , sf1 , sf2} from "./specialFeatures.js";
 
 function rightbun()
 {
@@ -54,17 +55,29 @@ function disp()
                 if(innerDiv.getAttribute('id') == arrmenucontentHeading[i])
                 {
                     index=i;
+                    index++;
                 }   
             }
     
             if(index == 2)
-            {rightButton.disabled= true;}
+            {
+                innerDiv.setAttribute('id' , 'menu2');
+                rightButton.disabled= true;
+                menu2();
+            }
             else
             {
                 rightButton.disabled= false;
-                innerHeading.textContent = "Menu";
-                innerinnerDiv.textContent = arrmenucontent[++index];
-                innerDiv.setAttribute('id' , arrmenucontent[index]);
+                innerDiv.setAttribute('id' , arrmenucontentHeading[index]);
+
+                if(index == 1)
+                {
+                    menu1();
+                }
+                else if (index == 2)
+                {
+                    menu2();
+                }
             }
     
     }}
@@ -77,18 +90,29 @@ function disp()
                 if(innerDiv.getAttribute('id') == arrspcontentHeading[i])
                 {
                     index=i;
+                    index++;
                 }   
             }
     
             if(index == 2)
-            {rightButton.disabled= true;}
+            {
+                rightButton.disabled= true;
+                innerDiv.setAttribute('id' , arrspcontentHeading[2]);
+                sf2();
+            }
             else
             {
                 rightButton.disabled= false;
-                innerHeading.textContent = "Special Features";
-                innerinnerDiv.textContent = arrspcontent[++index];
-                innerDiv.setAttribute('id' , arrspcontent[index]);
+                innerDiv.setAttribute('id' , arrspcontentHeading[index]);
                 
+                if(index == 0)
+                {
+                    sf0();
+                }
+                else if(index == 1)
+                {
+                    sf1();
+                }
             }
         }
 }

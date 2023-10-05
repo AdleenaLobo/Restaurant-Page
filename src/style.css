@@ -48,10 +48,10 @@ html,body
 
 .floatingBlock
 {
+    margin-top: 150px;
     display:flex;
     align-items: center;
     justify-content: center;
-    margin: 5rem;
     gap: 1rem;
     border-radius: 2rem;
     background-color: rgb(244, 241, 241);
@@ -82,7 +82,7 @@ button
     justify-content: center;
     align-items: center;
 }
-#side2 , #side1
+#side2 , #side1 , #side3
 {
     margin:2rem;
     text-align:center;
@@ -93,4 +93,16 @@ button
 {
     text-align: center;
     width: 100%;
+}
+
+div[name='Menu'] #indiv
+{
+display: flex;
+overflow: auto;
+}
+
+div[name='Menu'] #indiv img
+{
+    border-radius: 2rem;
+    border: 2px solid black;
 }

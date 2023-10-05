@@ -1,5 +1,7 @@
 import { homepage0, homepage1, homepage2 } from "./Homepage";
-import { innerDiv, leftButton, rightButton , arrmenucontent, arrspcontent, innerHeading , innerinnerDiv, arrhomecontentHeading } from "./bodyHome";
+import { menu0, menu1, menu2 } from "./Menupage";
+import { innerDiv, leftButton, rightButton , arrmenucontentHeading, innerHeading ,  arrhomecontentHeading, arrspcontentHeading} from "./bodyHome";
+import { sf1 , sf2 , sf0 } from "./specialFeatures";
 
 function leftbun()
 {
@@ -49,7 +51,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.getAttribute('id') == arrmenucontent[i])
+                if(innerDiv.getAttribute('id') == arrmenucontentHeading[i])
                 {
                     index=i;
                     index --;
@@ -58,16 +60,24 @@ function disp()
     
             if(index == 0 || index == -1)
             {
+            
+                innerDiv.setAttribute('id' , arrmenucontentHeading[0]);
                 leftButton.disabled= true;
-                homepage0();
+                menu0();
             }
 
             else
             {
                 leftButton.disabled= false;
-                innerHeading.textContent = "Menu";
-                innerinnerDiv.textContent = arrmenucontent[--index];
-                innerDiv.setAttribute('id' , arrmenucontent[index]);
+                innerDiv.setAttribute('id' , arrmenucontentHeading[index]);
+                if(index ==1)
+                {
+                    menu1();
+                }
+                else if( index == 2)
+                {
+                    menu2();
+                }
             }
     
     }}
@@ -77,22 +87,32 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.getAttribute('id') == arrspcontent[i])
+                if(innerDiv.getAttribute('id') == arrspcontentHeading[i])
                 {
                     index=i;
+                    index--;
                 }   
             }
     
-            if(index == 0)
+            if(index == 0 || index == -1)
             {
                 leftButton.disabled= true;
+                innerDiv.setAttribute('id' , 'sp0');
+                sf0();
             }
             else
             {
                 leftButton.disabled= false;
-                innerHeading.textContent = "Special Features";
-                innerinnerDiv.textContent = arrspcontent[--index];
-                innerDiv.setAttribute('id' , arrspcontent[index]);
+                innerDiv.setAttribute('id' , arrspcontentHeading[index]);
+                if(index == 1)
+                {
+                    sf1();
+                }
+                else if (index == 2)
+                {
+                    sf2();
+                }
+
             }
         }
 }
