@@ -1,8 +1,7 @@
-import { innerDiv, leftButton, rightButton } from "./bodyHome";
+import { homepage0, homepage1, homepage2 } from "./Homepage";
+import { arrhomecontentHeading, innerDiv, leftButton, rightButton,arrmenucontent , arrspcontent , innerHeading , innerinnerDiv } from "./bodyHome";
 
-let arrhomecontent=['random' , 'random2' , 'random3'];
-let arrmenucontent = ['something' , 'something2' , 'something3'];
-let arrspcontent = ['anything' , 'anything2' , 'anything3'];
+
 function rightbun()
 {
     rightButton.addEventListener('click' , disp);
@@ -15,18 +14,34 @@ function disp()
     {   let index;
         for (let i =0; i<3 ; i++ )
         {
-            if(innerDiv.textContent == arrhomecontent[i])
+            if(innerDiv.getAttribute('id') == arrhomecontentHeading[i])
             {
                 index=i;
+                index++;
             }   
         }
 
         if(index == 2)
-        {rightButton.disabled= true;}
+        {
+            innerDiv.setAttribute('id' , 'home2');
+            rightButton.disabled= true;
+            homepage2();
+        }
+
         else
         {
             rightButton.disabled= false;
-            innerDiv.textContent = arrhomecontent[++index];
+            innerHeading.textContent = "About us";
+            innerDiv.setAttribute('id' , arrhomecontentHeading[index]);
+
+            if(index == 1)
+            {
+                homepage1();
+            }
+            else if(index == 0)
+            {
+                homepage0();
+            }
         }
 
     }
@@ -36,7 +51,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.textContent == arrmenucontent[i])
+                if(innerDiv.getAttribute('id') == arrmenucontentHeading[i])
                 {
                     index=i;
                 }   
@@ -47,7 +62,9 @@ function disp()
             else
             {
                 rightButton.disabled= false;
-                innerDiv.textContent = arrmenucontent[++index];
+                innerHeading.textContent = "Menu";
+                innerinnerDiv.textContent = arrmenucontent[++index];
+                innerDiv.setAttribute('id' , arrmenucontent[index]);
             }
     
     }}
@@ -57,7 +74,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.textContent == arrspcontent[i])
+                if(innerDiv.getAttribute('id') == arrspcontentHeading[i])
                 {
                     index=i;
                 }   
@@ -68,7 +85,10 @@ function disp()
             else
             {
                 rightButton.disabled= false;
-                innerDiv.textContent = arrspcontent[++index];
+                innerHeading.textContent = "Special Features";
+                innerinnerDiv.textContent = arrspcontent[++index];
+                innerDiv.setAttribute('id' , arrspcontent[index]);
+                
             }
         }
 }

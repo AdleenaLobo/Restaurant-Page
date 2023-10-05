@@ -1,4 +1,4 @@
-import { innerDiv} from "./bodyHome";
+import { innerDiv, innerinnerDiv , innerHeading , leftButton , rightButton} from "./bodyHome";
 import { SpecialFeatures } from "./headingHome";
 
 function event3()
@@ -8,7 +8,11 @@ function event3()
 
 function speacialpage()
 {
+    leftButton.disabled = false;
+    rightButton.disabled = false;
     innerDiv.setAttribute('name', 'SP');
-    innerDiv.textContent="anything";
+    innerDiv.setAttribute('id', 'sp0');
+    innerHeading.textContent = "Special Features"
+    innerinnerDiv.textContent="sp0";
 }
 export {event3};

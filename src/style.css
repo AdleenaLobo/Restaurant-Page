@@ -1,4 +1,8 @@
 
+:root
+{
+    --purple:rgb(173, 68, 68);
+}
 
 *
 {
@@ -11,10 +15,12 @@ html,body
 {
     height:100%;
     overflow: auto;
+    background-color: var(--purple);
 }
 #content
 {
-    background-color: rgb(111, 243, 111);
+    background-image: url('../assets/background.jpg');
+    background-size: 50rem 50rem;
     height:100%;
     width:100%;
     position: absolute;
@@ -29,7 +35,10 @@ html,body
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f5cef4;
+    background:var(--purple);
+    color: whitesmoke;
+    border-bottom:  0.25px solid whitesmoke;
+    box-shadow: 2px 5px 5px whitesmoke;
     gap: 5rem;
     position: fixed;
     top: 0;
@@ -42,11 +51,16 @@ html,body
     display:flex;
     align-items: center;
     justify-content: center;
-    margin: 3rem;
+    margin: 5rem;
     gap: 1rem;
     border-radius: 2rem;
-    background-color: antiquewhite;
+    background-color: rgb(244, 241, 241);
     padding: 2rem;
+}
+.floatingBlock>h2
+{
+    text-align: center;
+    width: 100%;
 }
 
 
@@ -55,4 +69,28 @@ html,body
     margin: 1px;
     display: flex;
     gap: 2rem;
+}
+
+button
+{
+    background-color: var(--purple);
+}
+#indiv
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#side2 , #side1
+{
+    margin:2rem;
+    text-align:center;
+    max-width: 300px;
+}
+
+#home0>h2 ,#home1>h2 , #home2>h2 , #menu0>h2 ,#menu1>h2 , #menu2>h2 , #sp0>h2 , #sp1>h2 , #sp2>h2 
+{
+    text-align: center;
+    width: 100%;
 }

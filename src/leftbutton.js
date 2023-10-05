@@ -1,9 +1,6 @@
-import { innerDiv, leftButton, rightButton } from "./bodyHome";
+import { homepage0, homepage1, homepage2 } from "./Homepage";
+import { innerDiv, leftButton, rightButton , arrmenucontent, arrspcontent, innerHeading , innerinnerDiv, arrhomecontentHeading } from "./bodyHome";
 
-
-let arrhomecontent=['random' , 'random2' , 'random3'];
-let arrmenucontent = ['something' , 'something2' , 'something3'];
-let arrspcontent = ['anything' , 'anything2' , 'anything3'];
 function leftbun()
 {
     leftButton.addEventListener('click' , disp);
@@ -17,19 +14,33 @@ function disp()
     {   let index;
         for (let i =0; i<3 ; i++ )
         {
-            if(innerDiv.textContent == arrhomecontent[i])
+            if(innerDiv.getAttribute('id') == arrhomecontentHeading[i])
             {
                 index=i;
+                index--;
             }   
         }
 
-        if(index == 0)
-        {leftButton.disabled= true;}
-        else
+        if(index == 0 || index == -1)
         {
-            leftButton.disabled= false;
-            innerDiv.textContent = arrhomecontent[--index];
+            
+            innerDiv.setAttribute('id' , arrhomecontentHeading[0]);
+            leftButton.disabled= true;
+            homepage0();
         }
+        else{
+            leftButton.disabled= false;
+            innerHeading.textContent = "About us";
+            innerDiv.setAttribute('id' , arrhomecontentHeading[index]);
+        if (index == 1)
+        {
+            homepage1();
+        }
+        else if(index ==2)
+        {
+            homepage2();
+        }
+    }
 
     }
     else if (innerDiv.getAttribute("name") == "Menu")
@@ -38,18 +49,25 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.textContent == arrmenucontent[i])
+                if(innerDiv.getAttribute('id') == arrmenucontent[i])
                 {
                     index=i;
+                    index --;
                 }   
             }
     
-            if(index == 0)
-            {leftButton.disabled= true;}
+            if(index == 0 || index == -1)
+            {
+                leftButton.disabled= true;
+                homepage0();
+            }
+
             else
             {
                 leftButton.disabled= false;
-                innerDiv.textContent = arrmenucontent[--index];
+                innerHeading.textContent = "Menu";
+                innerinnerDiv.textContent = arrmenucontent[--index];
+                innerDiv.setAttribute('id' , arrmenucontent[index]);
             }
     
     }}
@@ -59,7 +77,7 @@ function disp()
         {
             for (let i = 0; i<3 ; i++ )
             {
-                if(innerDiv.textContent == arrspcontent[i])
+                if(innerDiv.getAttribute('id') == arrspcontent[i])
                 {
                     index=i;
                 }   
@@ -72,7 +90,9 @@ function disp()
             else
             {
                 leftButton.disabled= false;
-                innerDiv.textContent = arrspcontent[--index];
+                innerHeading.textContent = "Special Features";
+                innerinnerDiv.textContent = arrspcontent[--index];
+                innerDiv.setAttribute('id' , arrspcontent[index]);
             }
         }
 }
