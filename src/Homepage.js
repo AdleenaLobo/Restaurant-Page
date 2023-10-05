@@ -38,6 +38,7 @@ function initial()
 }
  function homepage0()
  {  
+   innerHeading.textContent= "About us";
    side1.textContent = "";
    side2.textContent = "";
    image.src = rest1;

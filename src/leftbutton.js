@@ -32,7 +32,6 @@ function disp()
         }
         else{
             leftButton.disabled= false;
-            innerHeading.textContent = "About us";
             innerDiv.setAttribute('id' , arrhomecontentHeading[index]);
         if (index == 1)
         {

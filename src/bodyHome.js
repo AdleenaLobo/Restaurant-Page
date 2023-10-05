@@ -56,6 +56,7 @@ function addClass()
 {
     container.classList.add('floatingBlock');
     innerDiv.setAttribute('id', 'home0');
+    innerDiv.setAttribute('name' , 'Home');
     innerinnerDiv.setAttribute('id' , 'indiv');
     side1.setAttribute('id', 'side1');
     side2.setAttribute('id' , 'side2');
